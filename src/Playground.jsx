@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import Timer from './Timer'
+import Card from './Card'
 
 export default class Playground extends Component {
     render() {
-        let tempComp = '<div id="meta"><label for="title" title="Title appears in the browser title bar">Title of the web page:</label>            <input class="lg" name="title" type="text" maxlength="100" placeholder="Title appears in the browser\'s title bar, search results, etc">        <label for="metaDescription" title="Description can appear in search engines\' search results pages">Description of page content:</label>            <textarea name="metaDescription" id="metaDescription" placeholder="Make it nice and short, but descriptive. The description may appear in search engines\' search results pages..."></textarea>        <label for="metaKeywords" title="Keywords may assist in search results">Keywords related to page content:</label>        <textarea name="metaKeywords" id="metaKeywords" placeholder="Separate keywords or phrases with a comma (example: html code generator, generate html, ...)"></textarea></div>'
+        let tempComp = '<p>This is a component declared as variable</p>'
         let tempStyle = {
             backgroundColor: 'green',
             padding: '20px',
@@ -14,7 +16,12 @@ export default class Playground extends Component {
         return ([
             //using plain html tags in component and using class Name
             <h1 key='h1' className="heading">Hello World!</h1>,
+            //statefull component
+            <Timer key='sc' color="orange"/>,
+            <Timer key='sc1' color="green"/>,
+            <Timer key='sc2' color="blue"/>,
             //nesting one component inside another
+            <Card key='card1'/>,
             <Sample key='h2' />,
             //inline style along with variable component evaluation
             <div key="div1" style={tempStyle} dangerouslySetInnerHTML={markup}></div>,
